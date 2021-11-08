@@ -57,11 +57,14 @@ spec:
     app: <APP>
   ports:
     - protocol: TCP
+      name : actuator
       port: 9191
       targetPort: 9191
     - protocol: TCP
       port: 8181
+      name : rsocket
       targetPort: 8181
     - protocol: TCP
       port: 8080
+      name : http
       targetPort: 8080
