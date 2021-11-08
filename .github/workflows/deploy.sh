@@ -23,7 +23,5 @@ function app_push() {
 
 echo "starting in $ROOT. "
 cd $ROOT/../..
-ls -la
-kubectl delete ns/${K8S_NS}
 app_push customers
-app_push orders
+#app_push orders
