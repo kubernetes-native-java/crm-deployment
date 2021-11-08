@@ -19,4 +19,4 @@ echo "starting in $ROOT. "
 cd $ROOT/../..
 kubectl delete ns/$K8S_NS || echo "couldn't delete the $K8S_NS namespace. Maybe it doesn't exist?"
 app_push customers
-#app_push orders
+app_push orders
