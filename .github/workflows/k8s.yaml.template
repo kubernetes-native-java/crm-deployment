@@ -26,7 +26,7 @@ spec:
             image: gcr.io/<GCR_PROJECT>/<APP>
             env:
                 - name: MANAGEMENT_SERVER_PORT
-                  value: "9090"
+                  value: "9191"
                 - name: SERVER_PORT
                   value: "8080"
                 - name: SPRING_RSOCKET_SERVER_PORT
@@ -35,13 +35,13 @@ spec:
             readinessProbe:
                 httpGet:
                     path: /actuator/health/readiness
-                    port: 9090
+                    port: 9191
                 initialDelaySeconds: 10
                 periodSeconds: 5
             livenessProbe:
                 httpGet:
                     path: /actuator/health/liveness
-                    port: 9090
+                    port: 9191
 
 
 
