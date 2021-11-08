@@ -3,13 +3,8 @@ set -e
 
 ROOT=${GITHUB_WORKSPACE:-$(cd $(dirname $0)/../.. && pwd)}
 
-function image_name() {
-  echo "gcr.io/${GCLOUD_PROJECT}/$1"
-}
-
 function app_push() {
   NAME=$1
-  IMAGE_NAME=$(image_name "$NAME")
   OUTPUT_FN=$ROOT/tmp/${NAME}-generated.yaml
   mkdir -p "$(dirname $OUTPUT_FN)" || echo "could not create ${OUTPUT_FN}."
   cat $ROOT/.github/workflows/k8s.yaml.template |
